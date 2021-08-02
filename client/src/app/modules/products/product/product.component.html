@@ -1,0 +1,26 @@
+
+    <div  class="row">
+
+        <div *ngFor="let product of ProductList" class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <a ><img class="card-img-top" [src]="product.ImageUrl" alt=""></a>
+                <!-- <img [src]="product.ImageUrl"> -->
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a router="">{{product.Name}}</a>
+                    </h4>
+                    <h5>{{product.Price|currency}}</h5>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+</div>
+<!-- /.row -->
+
+<!-- /.col-lg-9 -->
+
+<!-- /.row -->

@@ -1,0 +1,66 @@
+<div class="form-container">
+    <div class="signup-content">
+        <div class="signup-form">
+            <h2 class="form-title">Sign up</h2>
+            <div class='text-danger' *ngIf="errors != ''">
+               <span [innerText]="errors"></span>
+            </div>
+
+            <!-- @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "register-form" })) -->
+            <form (ngSubmit)="onSubmit()" >
+
+
+                <!-- @Html.AntiForgeryToken() -->
+
+                <!-- @Html.ValidationSummary(true, "", new { @class = "text-danger" }) -->
+
+                <div class="form-group">
+                    <label for="userName"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    <input type="text" [(ngModel)]="registerInfo.UserName" required name="userName" >
+                </div>
+                <!-- @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" }) -->
+                <br />
+                <div class="form-group">
+                    <label for="userEmail"><i class="zmdi zmdi-email"></i></label>
+                    <input type="text" [(ngModel)]="registerInfo.Email" required name="userEmail" >
+
+                    <!-- @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "", @placeholder = "Your Email" } }) -->
+                </div>
+                <!-- @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" }) -->
+
+                <br />
+                <div class="form-group">
+                    <label for="userPassword"><i class="zmdi zmdi-lock"></i></label>
+                    <input type="password" [(ngModel)]="registerInfo.Password" required name="userPassword" >
+
+                    <!-- @Html.EditorFor(model => model.PasswordHash, new { htmlAttributes = new { @class = "", @placeholder = "Your Password" } }) -->
+                </div>
+                <!-- @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" }) -->
+
+                <br />
+                <div class="form-group">
+                    <label for="userConfirmPassword"><i class="zmdi zmdi-lock-outline"></i></label>
+                    <input type="password" [(ngModel)]="registerInfo.ConfirmPassword" required name="userConfirmPassword" >
+
+                    <!-- @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "", @placeholder = "Repeat Your Password" } }) -->
+                </div>
+                <!-- @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" }) -->
+
+                <br />
+                <div class="form-group">
+
+                    <input type="checkbox" name="AgreeTerms" id="AgreeTerms" class="agree-term" />
+                    <label for="AgreeTerms" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                </div>
+
+                <div class="form-group form-button">
+                    <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                </div>
+            </form>
+        </div>
+        <div class="signup-image">
+            <figure><img src="assets/Content/Resources/images/signup-image.jpg" alt="sing up image"></figure>
+            <a href="~/Account/Login" class="signup-image-link">I am already member</a>
+        </div>
+    </div>
+</div>

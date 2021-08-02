@@ -1,0 +1,5 @@
+
+<h1 class="my-4">Brands</h1>
+<div *ngFor="let category of CategoriesList" class="list-group">
+        <a (click)="showProducts()" class="list-group-item">{{category.Name}}</a>
+</div>
